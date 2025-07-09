@@ -132,7 +132,7 @@ void NavEKF3_core::ResetPosition(resetDataSource posResetSource)
         if ((imuSampleTime_ms - lastTimeGpsReceived_ms < 250 && posResetSource == resetDataSource::DEFAULT) || posResetSource == resetDataSource::GPS) {
             // correct for antenna position
             gps_elements gps_corrected = gpsDataNew;
-            CorrectGPSForAntennaOffset(gps_corrected);
+            CorrectGPSForAntennaOffset(gps_corrected);    
             // record the ID of the GPS for the data we are using for the reset
             last_gps_idx = gps_corrected.sensor_idx;
             // calculate position
